@@ -21,7 +21,9 @@ jobs:
           persist-credentials: false
       - name: Validate repository files
         shell: bash
-        run: bash tests/run-security.sh
+        run: |
+          python3 -m pip install --disable-pip-version-check --user pytest==8.3.5
+          python3 -m pytest -q tests
 
   hostile-inputs:
     name: event / hostile-inputs
@@ -38,4 +40,5 @@ jobs:
         run: |
           set -Eeuo pipefail
           bash -n scripts/lib/common.sh scripts/actions/*.sh scripts/admin/*.sh scripts/participant/*.sh scripts/scoring/*.sh tools/install-eventctl.sh
-          bash tests/run-security.sh
+          python3 -m pip install --disable-pip-version-check --user pytest==8.3.5
+          python3 -m pytest -q tests

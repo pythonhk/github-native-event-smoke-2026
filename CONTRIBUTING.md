@@ -3,10 +3,10 @@
 Changes to workflows, schemas, request parsing, registry reducers, or branch
 controls require a security review. Keep participant-controlled data separate
 from trusted workflow code. Add a hostile-input test for every new parser rule
-and run:
+and run the repository tests with:
 
 ```bash
-bash tests/run-security.sh
+uv run --with pytest==8.3.5 --no-project pytest -q tests
 ```
 
 Do not add a custom GitHub App, a long-lived token, or a dependency that executes

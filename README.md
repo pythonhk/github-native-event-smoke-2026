@@ -114,6 +114,18 @@ requires the pinned `eventctl` binary, protected trust files, and a source-time
 map for the proof PRs. Its explicit `--plan-only` mode exists only for local
 hostile-input tests and says that cryptographic verification was not run.
 
+The shell files under `scripts/` are trusted runtime adapters, not the test
+harness. GitHub Actions invokes them from the checked-in base revision, and the
+same public commands are exercised locally by the pytest suite. Keeping the
+validation and state transitions outside YAML avoids duplicating security logic
+inside workflow files and lets an organizer reproduce a check before merging.
+
+Run the fixture-based checks locally with:
+
+```bash
+uv run --with pytest==8.3.5 --no-project pytest -q tests
+```
+
 ## Layout
 
 ```text
