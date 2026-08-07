@@ -26,8 +26,9 @@ ACT_CONTAINER_ARCH = os.environ.get(
 CHECKOUT_ACTION_SHA = "11bd71901bbe5b1630ceea73d27597364c9af683"
 HEAD_SHA = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 HEAD_BRANCH = "submission"
-REPOSITORY = "pythonhk/github-native-event-starter-repo-only"
-REPOSITORY_ID = 123456789
+REPOSITORY = "pythonhk/github-native-event-smoke-2026"
+REPOSITORY_NAME = "github-native-event-smoke-2026"
+REPOSITORY_ID = 1326333426
 PR_NUMBER = 17
 PR_ID = 1700000000
 
@@ -78,7 +79,7 @@ def _event(
         "repository": {
             "id": REPOSITORY_ID,
             "full_name": REPOSITORY,
-            "name": "github-native-event-starter-repo-only",
+            "name": REPOSITORY_NAME,
             "owner": {"login": "pythonhk"},
         },
         "pull_request": {
@@ -110,7 +111,7 @@ def _dispatch_event(*, ref: str, inputs: Mapping[str, str]) -> dict[str, Any]:
         "repository": {
             "id": REPOSITORY_ID,
             "full_name": REPOSITORY,
-            "name": "github-native-event-starter-repo-only",
+            "name": REPOSITORY_NAME,
             "owner": {"login": "pythonhk"},
         },
         "sender": {"login": "organizer"},
@@ -240,7 +241,8 @@ def _git_server(checkout: Path, tmp_path: Path):
     if not (fixture_root / "contents.json").exists():
         _write_json(fixture_root / "contents.json", {})
     remote_root = tmp_path / "git-root"
-    remote = remote_root / "pythonhk" / "github-native-event-starter-repo-only"
+    owner, repository_name = REPOSITORY.split("/", maxsplit=1)
+    remote = remote_root / owner / repository_name
     remote.parent.mkdir(parents=True)
     subprocess.run(
         ["git", "init", "--bare", str(remote)], check=True, capture_output=True

@@ -1,25 +1,25 @@
 schema: pythonhk.event-config/v2
-event_id: replace-with-event-id
+event_id: github-native-event-smoke-2026
 event_epoch: "1"
 phase: draft
 enabled: false
 base_repository:
   owner: pythonhk
-  name: replace-with-event-repository
-  id: "0000000000000000001"
+  name: github-native-event-smoke-2026
+  id: "1326333426"
 terms:
   path: event/terms.md
-  sha256: replace-with-terms-digest
+  sha256: fcb70e2d8a2a0fd1481aae646d9f2339165767c9be2f09dd8a03861d3fa437d9
 registration:
   request_ttl_seconds: 604800
-  maximum_participants: 200
+  maximum_participants: 20
 teams:
   minimum_size: 1
   maximum_size: 5
   proposal_ttl_seconds: 604800
 submissions:
   maximum_attempts_per_team: 10
-  maximum_total_attempts: 200
+  maximum_total_attempts: 50
   base_branch: main
 state:
   branch: registry
