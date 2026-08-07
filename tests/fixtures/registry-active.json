@@ -1,6 +1,6 @@
 {
   "schema": "pythonhk.registry-state/v2",
-  "event_id": "demo-event-2026",
+  "event_id": "github-native-event-smoke-2026",
   "phase": "submissions_open",
   "enabled": true,
   "disabled_reason": "",
@@ -10,7 +10,7 @@
   "teams": {"22222222-2222-4222-8222-222222222222": {"team_id": "22222222-2222-4222-8222-222222222222", "member_ids": ["101"], "proposal_digest": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "activation_commit": "0123456789012345678901234567890123456789ab"}},
   "memberships": {"101": "22222222-2222-4222-8222-222222222222"},
   "attempts": {},
-  "quotas": {"maximum_total_attempts": 200, "maximum_attempts_per_team": 10, "reserved_total": 0, "reserved_by_team": {}},
+  "quotas": {"maximum_total_attempts": 50, "maximum_attempts_per_team": 10, "reserved_total": 0, "reserved_by_team": {}},
   "results": {},
   "scoring": {"enabled": false, "isolation": "organizer-controlled", "scorer_id": "", "scorer_version": ""}
 }

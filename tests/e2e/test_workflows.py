@@ -481,7 +481,7 @@ def test_team_proposal_workflow_reaches_ready_after_all_consents(
             "key_id": key_id,
             "consent": {
                 "kind": "team_consent",
-                "event_id": "demo-event-2026",
+                "event_id": "github-native-event-smoke-2026",
                 "actor_id": "103",
                 "base_repository": {"id": str(REPOSITORY_ID)},
                 "team_id": team["team_id"],
